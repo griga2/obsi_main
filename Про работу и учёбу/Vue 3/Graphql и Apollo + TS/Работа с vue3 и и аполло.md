@@ -1,0 +1,110 @@
+#apollo #vue
+
+С простого, этапы добавления запрос
+
+#### для **Query**
+
+Создал ты View, создал Pinia. Вот тебе надо написать функцию что запросить например типы заявок. 
+Первое, создаём файл с логически связанным названием в папке **gql -> query**. Вот мы создали Types.ts. 
+В нём дропаем примерно такое чудо. Ты мы указываем запрос, его полезную нагрузку и возвращаем **функцию onResult** (Расписать что тут вообще написано) Внутри его мы используем не как обычно всю тушку запроса, описываем его фрагментом.
+
+```js
+import { useQuery } from '@vue/apollo-composable'
+import { graphql } from '@/gql'
+import { provideApolloClient } from '@vue/apollo-composable'
+import { apolloClient } from '@/apollo.config'
+
+export default {
+  setup(props: string) {
+    const { onResult } = provideApolloClient(apolloClient)(() =>
+      useQuery(
+        graphql(`
+        query ReadRequestTypes($input: String!){
+            ReadType(input:$input){
+	            ...RequestTypesFragment
+            }
+          }`
+        ),
+        () => ({
+          input: props
+        })
+      )
+    )
+    return { onResult }
+  }
+}
+```
+
+Теперь опишем фрагмент. Есть два места где можно их сохранять. Первое место это в корневой папке gql а второе создать папку fragments в папке твоего View. 
+
+```js
+import { graphql } from '@/gql'
+
+export default {
+  setup() {
+    const fragment = graphql(`
+      fragment RequestFragment on Request {
+        id
+        ...(Перечистляем нужные поля)
+        author_id
+        agreement_id
+      }
+    `)
+    return { fragment }
+  }
+}
+```
+
+Затем вызываем команду >**npm run generate**. Если помолиться и потанцевать с бубном текст перестанет быть подчёркнутым и всё подцепится. Если нет, читай ниже про траблшутинг 
+Теперь вызываем onResult и меняем в нём значения реактивных переменных в сторе.
+
+```js
+ const GetPriorites = async ()=> {
+    const { onResult } = await ReadPrioritiesGql.setup() //используем первый фрагмент кода
+    await onResult((queryResult) => {
+    //внутри функции меняем значения
+        priorityList.value = queryResult.data?.ReadPriority?.map((prioritet) => {
+            return useFragment(prioritetFragment, prioritet)
+        })
+        console.log(priorityList.value);
+    })
+    console.log(priorityList.value);
+  }
+```
+#### Для **Mutation**
+
+
+Теперь про мутации, там всё почти так же
+```js
+import { useMutation } from '@vue/apollo-composable'
+import { graphql } from '@/gql'
+import type { RequestInput } from '@/gql/graphql'
+
+export default {
+  setup() {
+    const { mutate: createRequest } = useMutation(
+      graphql(`
+        mutation CreateRequest($input: RequestInput!) {
+          CreateRequest(input: $input) {
+            ...RequestFragment
+          }
+        }
+      `)
+    )
+    return { createRequest }
+  }
+}
+```
+
+```js
+const { createRequest } = CreateRequestGql.setup()
+
+const createNewRequest = async() => {
+  try {
+	await createRequest({input: getInputRequest.value})
+  } catch(err) {
+    console.log(err)
+  }
+}
+```
+#### Трабшутинг ****
