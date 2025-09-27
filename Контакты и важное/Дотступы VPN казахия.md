@@ -1,0 +1,9 @@
+
+server_privatekey
+wNy1BKg/I65f4nAsbTgGS3OvhKXPmdg6TjLKlA+88H8=
+server_publickey
+U+yXc5o7b5kzfZxGbp3ovhrBin7MO8zOAC7AhJtiN3E=
+public key zuzin
+n1BcKLZHFMPcqMUeLj94EoltWs6WRqfCndoW7PvSWlg=
+private key zuzin
+UHNl5NFz4f5IU5ClGErMiHnGg/yVf+8QfO1USNFsY1w=
