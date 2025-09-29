@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"22b136a0ca5dea69","x":-500,"y":-1260,"width":1562,"height":517,"type":"group","label":"Бизнес логика"},
+		{"id":"bba0436f216041c2","type":"text","text":"остатки на расчётных счетах","x":-140,"y":-960,"width":321,"height":50,"color":"2"},
+		{"id":"83b37ee7a5ad83e6","type":"text","text":"складские остатки","x":-69,"y":-840,"width":241,"height":53,"color":"2"},
+		{"id":"c4ac48ab54331359","type":"text","text":"дебиторские задолжности ","x":-69,"y":-1090,"width":250,"height":54,"color":"2"},
+		{"id":"0d8d87a16b53a0fe","type":"text","text":"Баланс доходов","x":280,"y":-966,"width":318,"height":56,"color":"2"},
+		{"id":"072bed989ea49c7b","x":280,"y":-1240,"width":318,"height":50,"color":"6","type":"text","text":"Баланс расходов"},
+		{"id":"c192fab05424626b","x":792,"y":-1096,"width":250,"height":60,"type":"text","text":"Управленческий баланс"},
+		{"id":"a57beb44ff2dc434","x":-69,"y":-1240,"width":250,"height":50,"color":"6","type":"text","text":"кредиторская задолжность"},
+		{"id":"8de52692e587d6e4","type":"text","text":"Регистры остатков на складе","x":-480,"y":-863,"width":250,"height":100,"color":"2"},
+		{"id":"0fbef1209ff3c662","x":-540,"y":293,"width":250,"height":314,"type":"text","text":"Таблица остатков складских\nUploadDate\nStorage\nSum\nCompany"},
+		{"id":"c74abdaa4383b8c4","x":-540,"y":40,"width":250,"height":200,"type":"text","text":"Таблица сумм дебиторской задолжности"},
+		{"id":"bd26eb0231121c31","type":"text","text":"Таблица сумм кредиторских  задолжности","x":-540,"y":-200,"width":250,"height":200},
+		{"id":"246560ab44fe48c8","x":-540,"y":-420,"width":250,"height":179,"type":"text","text":"Таблицы сумм остатков на Р/С"},
+		{"id":"6141ad7c5e645576","type":"text","text":"Таблица компаний\nINN","x":-40,"y":663,"width":270,"height":200},
+		{"id":"c392df6cb37261ee","type":"text","text":"Client\nТаблица клиентов\nПоля \n- ID\n- Mail\n- PasswordHash","x":400,"y":293,"width":250,"height":370}
+	],
+	"edges":[
+		{"id":"06fb4143977a6b75","fromNode":"83b37ee7a5ad83e6","fromSide":"right","toNode":"0d8d87a16b53a0fe","toSide":"left"},
+		{"id":"10db81f230e28d73","fromNode":"c4ac48ab54331359","fromSide":"right","toNode":"0d8d87a16b53a0fe","toSide":"left"},
+		{"id":"dac4acf23f8760bf","fromNode":"bba0436f216041c2","fromSide":"right","toNode":"0d8d87a16b53a0fe","toSide":"left"},
+		{"id":"7c1c8f8f74a40c8a","fromNode":"8de52692e587d6e4","fromSide":"right","toNode":"83b37ee7a5ad83e6","toSide":"left"},
+		{"id":"6f7ab44ff2ed0133","fromNode":"072bed989ea49c7b","fromSide":"right","toNode":"c192fab05424626b","toSide":"left"},
+		{"id":"c9297f0ad5183a85","fromNode":"0d8d87a16b53a0fe","fromSide":"right","toNode":"c192fab05424626b","toSide":"left"},
+		{"id":"50d2a352f0ca1093","fromNode":"a57beb44ff2dc434","fromSide":"right","toNode":"072bed989ea49c7b","toSide":"left"},
+		{"id":"634fcd269e14c750","fromNode":"6141ad7c5e645576","fromSide":"left","toNode":"0fbef1209ff3c662","toSide":"right"},
+		{"id":"e14a81761f8fe77b","fromNode":"6141ad7c5e645576","fromSide":"left","toNode":"c74abdaa4383b8c4","toSide":"right"},
+		{"id":"b02bbd05436282c3","fromNode":"6141ad7c5e645576","fromSide":"left","toNode":"bd26eb0231121c31","toSide":"right"},
+		{"id":"03fbe6c6000de4c2","fromNode":"6141ad7c5e645576","fromSide":"left","toNode":"246560ab44fe48c8","toSide":"right"},
+		{"id":"7e8ff5772647d194","fromNode":"c392df6cb37261ee","fromSide":"left","toNode":"6141ad7c5e645576","toSide":"right"}
+	]
+}

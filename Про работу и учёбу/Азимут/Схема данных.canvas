@@ -1,7 +1,0 @@
-{
-	"nodes":[
-		{"id":"c392df6cb37261ee","x":-83,"y":-190,"width":250,"height":370,"type":"text","text":"Client\nТаблица клиентов\nПоля \n- ID\n- "},
-		{"id":"6141ad7c5e645576","x":-83,"y":200,"width":250,"height":566,"type":"text","text":"Таблица компаний\nINN"}
-	],
-	"edges":[]
-}
