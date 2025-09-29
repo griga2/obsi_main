@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"c60d61a7329dc1ea","type":"group","x":-680,"y":-60,"width":660,"height":740,"label":"Серверная часть"},
+		{"id":"c167a3f827d51e8f","type":"text","text":"Телеграмм бот\npython","x":-320,"y":-40,"width":250,"height":60},
+		{"id":"056dbbbc2b19b838","type":"text","text":"Интеграция 1С УТ\n1c","x":-980,"y":-40,"width":250,"height":60},
+		{"id":"8981ed88fe76c517","type":"text","text":"Интеграция с банковским  API","x":-980,"y":65,"width":250,"height":60},
+		{"id":"a3f24a9c7b0fdc7f","type":"text","text":"Вэб фронт навигатора\nvue\n","x":40,"y":-40,"width":250,"height":60},
+		{"id":"1ebf142f7bef4685","type":"text","text":"\"Navigator\" \ngo","x":-620,"y":-40,"width":250,"height":55}
+	],
+	"edges":[
+		{"id":"695c493f8cd6ef53","fromNode":"c167a3f827d51e8f","fromSide":"right","toNode":"a3f24a9c7b0fdc7f","toSide":"left"},
+		{"id":"6aeb92ffdfc0e626","fromNode":"1ebf142f7bef4685","fromSide":"right","toNode":"c167a3f827d51e8f","toSide":"left"},
+		{"id":"90f7054f7a05d85a","fromNode":"056dbbbc2b19b838","fromSide":"right","toNode":"1ebf142f7bef4685","toSide":"left"},
+		{"id":"1625151f1ee95b05","fromNode":"8981ed88fe76c517","fromSide":"right","toNode":"1ebf142f7bef4685","toSide":"left"}
+	]
+}
